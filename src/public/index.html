@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD de Usuarios</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CRUD de Usuarios</h1>
+
+    <!-- Formulario para agregar/actualizar usuarios -->
+    <form id="userForm">
+      <input type="text" id="userId" hidden>
+      <input type="text" id="name" placeholder="Nombre" required>
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <button type="submit">Guardar</button>
+    </form>
+
+    <!-- Tabla para listar usuarios -->
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo electrónico</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los usuarios se cargarán aquí dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
