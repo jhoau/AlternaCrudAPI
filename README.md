@@ -89,11 +89,19 @@ API
 Puedes interactuar directamente con la API usando herramientas como Postman o curl. Los endpoints disponibles son:
 
 Endpoints de la API
+
 Método	Endpoint	Descripción
+
 GET	/api/users	Obtener todos los usuarios.
+
 GET	/api/users/:id	Obtener un usuario por ID.
+
 GET	/api/users/search/name	Buscar usuarios por nombre.
+
 GET	/api/users/search/name-and-id	Buscar usuarios por nombre e ID.
+
 POST	/api/users	Crear un nuevo usuario.
+
 PUT	/api/users/:id	Actualizar un usuario existente.
+
 DELETE	/api/users/:id	Eliminar un usuario (soft delete).
