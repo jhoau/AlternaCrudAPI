@@ -1,10 +1,16 @@
 const userForm = document.getElementById("userForm");
 const userTable = document.getElementById("userTable").getElementsByTagName("tbody")[0];
+const searchIdInput = document.getElementById("searchId");
 
 // Función para cargar usuarios
 async function loadUsers() {
   const response = await fetch("/api/users");
   const users = await response.json();
+  renderUsers(users);
+}
+
+// Función para renderizar usuarios en la tabla
+function renderUsers(users) {
   userTable.innerHTML = ""; // Limpiar la tabla
 
   users.forEach(user => {
@@ -19,6 +25,24 @@ async function loadUsers() {
       </td>
     `;
   });
+}
+
+// Función para buscar un usuario por ID
+async function searchUserById() {
+  const id = searchIdInput.value;
+  if (!id) {
+    alert("Por favor, ingresa un ID válido.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`/api/users/${id}`);
+    const user = await response.json();
+    renderUsers([user]); // Renderiza solo el usuario encontrado
+  } catch (error) {
+    alert("Usuario no encontrado.");
+    loadUsers(); // Vuelve a cargar todos los usuarios
+  }
 }
 
 // Función para agregar o actualizar un usuario

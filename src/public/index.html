@@ -18,6 +18,13 @@
       <button type="submit">Guardar</button>
     </form>
 
+    <!-- Campo de búsqueda por ID -->
+    <div class="search-container">
+      <input type="number" id="searchId" placeholder="Buscar por ID">
+      <button onclick="searchUserById()">Buscar</button>
+      <button onclick="loadUsers()">Listar Todos</button>
+    </div>
+
     <!-- Tabla para listar usuarios -->
     <table id="userTable">
       <thead>
